@@ -27,21 +27,23 @@ function App() {
   }
   const getAlbum = () => {
     setLoading(true);
-    fetch("https://jsonplaceholder.typicode.com/albums/" + albumId + "/photos")
-      .then(res => res.json())
-      .then((result) => {
-          setPhoto(true);
-          var photos = result;
-          // console.log(photos);
-          photos.forEach((photo, index) => {
-            photosList.push( <ImageCard key={index} photo={photo}/> )
-          });
-          setLoading(false);
-        },
-        (error) => {
-          setError(error);
-        }
-      )
+    if(!Number.isNaN(albumId)){
+      fetch("https://jsonplaceholder.typicode.com/albums/" + albumId + "/photos")
+        .then(res => res.json())
+        .then((result) => {
+            setPhoto(true);
+            var photos = result;
+            // console.log(photos);
+            photos.forEach((photo, index) => {
+              photosList.push( <ImageCard key={index} photo={photo}/> )
+            });
+            setLoading(false);
+          },
+          (error) => {
+            setError(error);
+          }
+        )
+    }
   }
 
   
