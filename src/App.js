@@ -55,7 +55,7 @@ function App() {
         <Row>
             <Col md={4}></Col>
             <Col md={4}>
-            <Form.Control type="text"  placeholder="Enter Album ID" onChange={ inputChanged }/>
+            <Form.Control type="text"  placeholder="Enter Album ID" onKeyUp={ inputChanged }/>
             <br/>
             <Button type="button" onClick={ getAlbum } className={"btn-block"}>
                 Get Album

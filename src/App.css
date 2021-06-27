@@ -26,3 +26,7 @@
 .image-card .card{
   width: 100%;
 }
+.btn-primary{
+  background-color: #E15B64 !important;
+  border-color: #E15B64 !important;
+}
